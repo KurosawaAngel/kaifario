@@ -5,8 +5,7 @@ from dataclasses import dataclass
 from functools import partial
 from typing import Any
 
-from kaifario.protocols import ConfigurationProvider
-from kaifario.protocols.converter import KeyConverter
+from kaifario.protocols import ConfigurationProvider, KeyConverter
 
 
 class EnviromentProvider(ConfigurationProvider):

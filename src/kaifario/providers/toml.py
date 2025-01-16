@@ -1,6 +1,5 @@
-from typing import Any
-
 import tomllib
+from typing import Any
 
 from kaifario.protocols import ConfigurationProvider
 
