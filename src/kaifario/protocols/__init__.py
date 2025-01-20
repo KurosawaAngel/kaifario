@@ -1,5 +1,4 @@
-__all__ = ["ConfigurationProvider", "KeyConverter", "Loader"]
+__all__ = ["ConfigurationProvider", "Loader"]
 
-from .converter import KeyConverter
 from .loader import Loader
 from .provider import ConfigurationProvider
