@@ -1,4 +1,4 @@
-from typing import Self
+from typing import Any, Self
 
 from kaifario.configuration import Configuration
 from kaifario.protocols.provider import ConfigurationProvider
@@ -21,5 +21,20 @@ class ConfigurationBuilder:
     def build(self) -> Configuration:
         data = {}
         for provider in self._providers:
-            data.update(provider.load())
+            _deep_merge(data, provider.load())
         return Configuration(data)
+
+
+def _deep_merge(
+    dest: dict[str, Any],
+    source: dict[str, Any],
+) -> None:
+    for key, value in source.items():
+        if (
+            key in dest
+            and isinstance(dest[key], dict)
+            and isinstance(value, dict)
+        ):
+            dest[key] = _deep_merge(dest[key], value)
+        else:
+            dest[key] = value
