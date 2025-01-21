@@ -19,7 +19,7 @@ class ConfigurationBuilder:
         return self
 
     def build(self) -> Configuration:
-        data = {}
+        data: dict[str, Any] = {}
         for provider in self._providers:
             _deep_merge(data, provider.load())
         return Configuration(data)
@@ -28,7 +28,7 @@ class ConfigurationBuilder:
 def _deep_merge(
     dest: dict[str, Any],
     source: dict[str, Any],
-) -> None:
+) -> dict[str, Any]:
     for key, value in source.items():
         if (
             key in dest
@@ -38,3 +38,4 @@ def _deep_merge(
             dest[key] = _deep_merge(dest[key], value)
         else:
             dest[key] = value
+    return dest

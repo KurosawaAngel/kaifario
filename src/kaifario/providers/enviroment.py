@@ -19,7 +19,6 @@ class EnviromentProvider(ConfigurationProvider):
     ) -> None:
         current = data
         for key in keys[:-1]:
-            key = self.key_converter(key)
             if key not in current:
                 current[key] = {}
             current = current[key]
