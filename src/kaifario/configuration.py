@@ -25,3 +25,6 @@ class Configuration:
 
     def get(self, t: type[T]) -> T:
         return self._loader.load(self._data, t)
+
+    def get_value(self, key: str, t: type[T]) -> T:
+        return self._loader.load(self._data[key], t)
