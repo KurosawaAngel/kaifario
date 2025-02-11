@@ -8,8 +8,10 @@ class EnviromentProvider(ConfigurationProvider):
     def __init__(
         self,
         prefix: str = "",
+        separator: str = "__",
     ) -> None:
         self.prefix = prefix.lower()
+        self.separator = separator
 
     def _set_nested_value(
         self,
@@ -30,6 +32,6 @@ class EnviromentProvider(ConfigurationProvider):
             env = env.lower()
             if env.startswith(self.prefix):
                 s = env.removeprefix(self.prefix)
-                keys = s.split("__")
+                keys = s.split(self.separator)
                 self._set_nested_value(data, keys, value)
         return data

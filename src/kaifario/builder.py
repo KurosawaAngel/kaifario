@@ -22,6 +22,7 @@ class ConfigurationBuilder:
         data: dict[str, Any] = {}
         for provider in self._providers:
             _deep_merge(data, provider.load())
+        self._providers = []
         return Configuration(data)
 
 
