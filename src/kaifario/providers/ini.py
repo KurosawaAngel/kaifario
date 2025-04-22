@@ -12,7 +12,7 @@ class IniProvider(ConfigurationProvider):
         config = configparser.ConfigParser()
         config.read(self.path)
         config_dict: dict[str, Any] = {
-        section: dict(config.items(section))
-        for section in config.sections()
-    }
+            section: dict(config.items(section))
+            for section in config.sections()
+        }
         return config_dict

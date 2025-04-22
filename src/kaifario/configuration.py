@@ -18,7 +18,7 @@ class Configuration:
             self._loader = Retort(strict_coercion=False)
 
     def get_section(self, key: str) -> "Configuration":
-        return Configuration(self._data.get(key, {}), self._loader)
+        return Configuration(self._data[key], self._loader)
 
     def __getitem__(self, key: str) -> "Configuration":
         return self.get_section(key)

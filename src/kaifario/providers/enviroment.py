@@ -30,8 +30,9 @@ class EnviromentProvider(ConfigurationProvider):
         data: dict[str, Any] = {}
         for env, value in os.environ.items():
             env = env.lower()
-            if env.startswith(self.prefix):
+            s = env
+            if self.prefix and env.startswith(self.prefix):
                 s = env.removeprefix(self.prefix)
-                keys = s.split(self.separator)
-                self._set_nested_value(data, keys, value)
+            keys = s.split(self.separator)
+            self._set_nested_value(data, keys, value)
         return data
