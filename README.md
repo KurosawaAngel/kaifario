@@ -21,6 +21,10 @@ configurator = ConfigurationBuilder().add_providers(
 print(configurator.get_value("a", int))  # Output: 1
 ```
 
+You can also use dictionary-like access:
+`value = configurator["a"]`
+However, please note that this form is not statically typed and does not perform automatic type coercion.
+
 ## 📦 Available Providers
 
 Kaifario supports various configuration sources:
