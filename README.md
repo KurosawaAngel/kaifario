@@ -132,18 +132,6 @@ class Loader(Protocol):
 
 The `Configuration` class accepts an optional `loader` argument:
 
-```python
-class Configuration:
-    def __init__(
-        self,
-        data: dict[str, Any],
-        loader: Loader | None = None,
-    ) -> None:
-        self._data = data
-        if loader is None:
-            self._loader = Retort(strict_coercion=False)
-```
-
 ## 🤝 Contributing
 
 Contributions, ideas, and bug reports are welcome! Feel free to open issues or submit pull requests.
