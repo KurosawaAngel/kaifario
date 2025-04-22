@@ -8,7 +8,7 @@ dependencies = [
     "adaptix>=3.0.0b9",
 ]
 license = { text = "MIT" }
-authors = [ { name = "Kurosawa", email = "145038102+KurosawaAngel@users.noreply.github.com" } ]
+authors = [ { name = "Kuro", email = "145038102+KurosawaAngel@users.noreply.github.com" } ]
 classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
