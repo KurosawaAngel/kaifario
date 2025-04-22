@@ -1,6 +1,6 @@
 [project]
 name = "kaifario"
-version = "0.3.0"
+version = "0.3.1"
 description = "Configuration providing library"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -27,6 +27,7 @@ build-backend = "setuptools.build_meta"
 [dependency-groups]
 dev = [
     "mypy>=1.14",
+    "pytest>=8.3.5",
     "ruff>=0.9",
 ]
 

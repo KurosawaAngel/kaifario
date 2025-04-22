@@ -15,7 +15,8 @@ class Configuration:
     ) -> None:
         self._data = data
         if loader is None:
-            self._loader = Retort(strict_coercion=False)
+            loader = Retort(strict_coercion=False)
+        self._loader = loader
 
     def get_section(self, key: str) -> "Configuration":
         return Configuration(self._data[key], self._loader)

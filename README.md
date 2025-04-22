@@ -14,11 +14,11 @@ pip install kaifario
 from kaifario.builder import ConfigurationBuilder
 from kaifario.providers.memory import MemoryProvider
 
-configurator = ConfigurationBuilder().add_providers(
+config = ConfigurationBuilder().add_providers(
     MemoryProvider({"a": 1, "b": 2})
 ).build()
 
-print(configurator.get_value("a", int))  # Output: 1
+print(config.get_value("a", int))  # Output: 1
 ```
 
 ## 📦 Available Providers

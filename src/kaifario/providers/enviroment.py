@@ -31,8 +31,11 @@ class EnviromentProvider(ConfigurationProvider):
         for env, value in os.environ.items():
             env = env.lower()
             s = env
-            if self.prefix and env.startswith(self.prefix):
-                s = env.removeprefix(self.prefix)
+            if self.prefix:
+                if env.startswith(self.prefix):
+                    s = env.removeprefix(self.prefix)
+                else:
+                    continue
             keys = s.split(self.separator)
             self._set_nested_value(data, keys, value)
         return data
