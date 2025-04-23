@@ -31,7 +31,7 @@ jobs:
       run: uv run ruff format src --check
     - name: Lint with ruff
       run: uv run ruff check src
-    - name: Lint with ruff
+    - name: Check typing with mypy
       run: uv run mypy src
     - name: Test with pytest
       run: uv run pytest
